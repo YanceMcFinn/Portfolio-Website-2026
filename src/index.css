@@ -1,0 +1,43 @@
+@import "tailwindcss";
+body {
+    font-family: "Lexend", sans-serif;
+}
+.navlink {
+  color: white;
+  text-decoration: none;
+  font-family: "Lexend", sans-serif;
+  font-variation-settings: "wght" 300;
+  display: inline-block;
+  /*transition: 
+    font-variation-settings 600ms cubic-bezier(.22,1,.36,1),
+    color 0.5s ease;
+  will-change: font-variation-settings;*/
+  
+}
+.navlink:hover {
+  color: rgb(123, 255, 0);
+  font-variation-settings: "wght" 800;
+  
+ }
+
+ @layer utilities {
+ .vf {
+    font-family: "Lexend", sans-serif;
+    font-variation-settings: "wght" 300 !important;
+    display: inline-block;
+    transition:
+      font-variation-settings 600ms cubic-bezier(.22,1,.36,1),
+      color 300ms ease;
+    will-change: font-variation-settings;
+  }
+
+  .vf:hover {
+    font-variation-settings: "wght" 500 !important;
+  }
+}
+/*.bg-gradient {
+    background-size: 100% 100%;
+background-position: 0px 0px,0px 0px,0px 0px;
+background-image: radial-gradient(200% 200% at 200% 149%, #00FFFFFF 0%, #073AFF00 99%),radial-gradient(103% 132% at 151% 127%, #8A4FFFF5 1%, #073AFF00 100%),linear-gradient(228deg, #0022A9FF 0%, #06000AFF 100%);
+}*/
+
