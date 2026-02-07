@@ -7,11 +7,20 @@ export default function ProjectModal({ project, onClose }) {
 
   if (!project) return null
 
-  const next = () =>
-    setIndex((index + 1) % project.images.length)
+  const isMotionGraphics =
+  typeof project?.id === "string" &&
+  project.id.includes("motiongraphics")
+  const hasImages = Array.isArray(project.images) && project.images.length > 0
 
-  const prev = () =>
+const next = () => {
+    if (!hasImages) return
+    setIndex((index + 1) % project.images.length)
+  }
+
+  const prev = () => {
+    if (!hasImages) return
     setIndex((index - 1 + project.images.length) % project.images.length)
+  }
 
   return (
     // Overlay
@@ -21,19 +30,29 @@ export default function ProjectModal({ project, onClose }) {
     >
       {/* Modal */}
       <div
-        className="bg-black/60 backdrop-blur-lg max-w-5xl w-full rounded-2xl border-white border-1 shadow-xl overflow-hidden text-white"
+        className="bg-black/60 backdrop-blur-lg max-w-7xl w-full rounded-2xl border-white border-1 shadow-xl overflow-hidden text-white"
         onClick={e => e.stopPropagation()}
       >
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Image / Slideshow */}
           <div className="relative bg-white">
-            <img
+            {isMotionGraphics ? (
+              <iframe
+                className="w-full h-[700px]"
+                src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                title={project.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+    />
+            ) :
+            (<img
               src={project.images[index]}
               alt={project.title}
               className="w-full h-[700px] object-contain"
-            />
+            />)}
 
-            {project.images.length > 1 && (
+            {!isMotionGraphics && hasImages && project.images.length > 1 && (
               <>
                 <button
                   onClick={prev}
@@ -67,6 +86,7 @@ export default function ProjectModal({ project, onClose }) {
             <p className="text-muted leading-relaxed">
               {project.description}
             </p>
+            {project.link && <p className = "mt-2 hover:text-lime-400"><i class="fa-solid fa-arrow-up-right-from-square"></i><a href={project.link} target="_blank" > View Live</a></p> }
           </div>
         </div>
       </div>

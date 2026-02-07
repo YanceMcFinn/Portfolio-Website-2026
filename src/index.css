@@ -35,6 +35,12 @@ body {
     font-variation-settings: "wght" 500 !important;
   }
 }
+
+.bg-zigzag {
+  background-color: #ffffff;
+opacity: 0.8;
+background: linear-gradient(135deg, #f9f9f955 25%, transparent 25%) -21px 0/ 42px 42px, linear-gradient(225deg, #f9f9f9 25%, transparent 25%) -21px 0/ 42px 42px, linear-gradient(315deg, #f9f9f955 25%, transparent 25%) 0px 0/ 42px 42px, linear-gradient(45deg, #f9f9f9 25%, #ffffff 25%) 0px 0/ 42px 42px;
+}
 /*.bg-gradient {
     background-size: 100% 100%;
 background-position: 0px 0px,0px 0px,0px 0px;

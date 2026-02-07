@@ -9,7 +9,7 @@ export default function App() {
   const [activeProject, setActiveProject] = useState(null)
 
   return (
-    <div className="min-h-screen bg-gradient text-black">
+    <div className="min-h-screen bg-zigzag text-black">
       <Navbar currentPage={page} onChange={setPage} />
 
       <main className="max-w-6xl mx-auto px-6 py-16 ">
@@ -25,7 +25,7 @@ export default function App() {
 
         {page === "gallery" && (
           <Gallery
-            projects={[...projects.graphic, ...projects.web]}
+            projects={projects}
             onOpen={setActiveProject}
           />
         )}
