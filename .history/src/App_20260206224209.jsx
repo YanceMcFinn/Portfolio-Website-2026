@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Navbar from "./components/Navbar"
+import NavBar from "./components/Navbar"
 import Gallery from "./components/Gallery"
 import ProjectModal from "./components/ProjectModal"
 import projects from "./data/projects"
@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-zigzag text-black">
-      <Navbar currentPage={page} onChange={setPage} />
+      <NavBar currentPage={page} onChange={setPage} />
 
       <main className="max-w-6xl mx-auto px-6 py-16 ">
         {page === "about" && (
