@@ -1,5 +1,5 @@
 import { useState } from "react"
-import NavBar from "./components/Navbar"
+import NavBar from "./components/NavBar"
 import Gallery from "./components/Gallery"
 import ProjectModal from "./components/ProjectModal"
 import projects from "./data/projects"
