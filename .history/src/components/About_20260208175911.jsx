@@ -1,6 +1,6 @@
 export default function About() {
     return (
-         <div className = "flex w-full ml-0 justify-between px-0 dark:text-white">
+         <div className = "flex w-full ml-0 justify-between px-0">
             <img
           src="images/assets/Me2.png" className="h-[calc(100vh-64px)]"></img>
             <div className = "my-auto mx-20">

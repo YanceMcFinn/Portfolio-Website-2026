@@ -13,7 +13,7 @@ export default function Gallery() {
         )
 const [selectedProject, setSelectedProject] = useState(null);
   return (
-    <div className="wrapper text-center mt-3 max-w-6xl mx-auto dark:text-white">
+    <div className="wrapper text-center mt-3 max-w-6xl mx-auto">
       <h1 className="text-center text-4xl mb-3 mt-0">PROJECTS</h1>
       <div className="flex justify-self-center mb-3">
         <button 
