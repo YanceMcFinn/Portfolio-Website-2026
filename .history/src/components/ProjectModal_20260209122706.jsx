@@ -85,20 +85,19 @@ const next = () => {
               </>
             )}
           </div>
-<button
-              onClick={onClose}
-              className="self-end mb-6 text-muted transition-all hover:text-lime-400 text-xl absolute top-3 right-5"
-            >
-              ✕
-            </button>
+
           {/* Info Panel */}
-          <div className="w-full
+          <div className="    w-full
               md:w-2/5
               p-6
               overflow-y-auto
-              my-auto
               relative">
-          
+          <button
+              onClick={onClose}
+              className="self-end mb-6 text-muted hover:text-white text-xl absolute top-3 right-5"
+            >
+              ✕
+            </button>
 
             <h2 className="text-3xl font-semibold mb-4">
               {project.title}

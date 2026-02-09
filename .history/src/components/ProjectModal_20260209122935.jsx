@@ -87,7 +87,7 @@ const next = () => {
           </div>
 <button
               onClick={onClose}
-              className="self-end mb-6 text-muted transition-all hover:text-lime-400 text-xl absolute top-3 right-5"
+              className="self-end mb-6 text-muted hover:text-white text-xl absolute top-0 right-5"
             >
               ✕
             </button>

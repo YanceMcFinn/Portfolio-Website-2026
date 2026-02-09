@@ -16,7 +16,7 @@ export default function Navbar() {
           <img
           src="/images/assets/SCDesign_Logo_2026_White.svg"
           alt="Sean Cole Design"
-          className="w-50"
+          className="h-8 w-auto"
         />
         </NavLink>
 

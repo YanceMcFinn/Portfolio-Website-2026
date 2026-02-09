@@ -2,6 +2,8 @@ import { useState } from "react"
 
 export default function ProjectModal({ project, onClose }) {
   const [index, setIndex] = useState(0)
+  const [zoomed, setZoomed] = useState(false)
+
 
   if (!project) return null
 
@@ -23,38 +25,20 @@ const next = () => {
   return (
     // Overlay
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center p-6 h-[calc(100vh-64px)]"
       onClick={onClose}
     >
       {/* Modal */}
       <div
-        className="relative
-          w-full
-          max-w-6xl
-          md:h-full
-          bg-black/70
-          backdrop-blur-lg
-          rounded-2xl
-          overflow-hidden
-          text-white
-          border-white
-          border-1"
+        className="bg-black/60 backdrop-blur-lg max-w-7xl w-full rounded-2xl border-white border-1 shadow-xl overflow-hidden text-white"
         onClick={e => e.stopPropagation()}
       >
-        <div className="flex flex-col md:flex-row h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Image / Slideshow */}
-          <div className="w-full
-              md:w-3/5
-              h-[40vh]
-              md:h-full
-              relative
-              bg-black
-              flex
-              items-center
-              justify-center">
+          <div className="relative bg-white">
             {isMotionGraphics ? (
               <iframe
-                className="w-full h-full"
+                className="w-full h-[700px]"
                 src={`https://www.youtube.com/embed/${project.youtubeId}`}
                 title={project.title}
                 frameBorder="0"
@@ -65,7 +49,7 @@ const next = () => {
             (<img
               src={project.images[index]}
               alt={project.title}
-              className="w-full h-full object-contain"
+              className="w-full h-[700px] object-contain"
             />)}
 
             {!isMotionGraphics && hasImages && project.images.length > 1 && (
@@ -85,20 +69,15 @@ const next = () => {
               </>
             )}
           </div>
-<button
+
+          {/* Info Panel */}
+          <div className="p-8 flex flex-col justify-center relative">
+          <button
               onClick={onClose}
-              className="self-end mb-6 text-muted transition-all hover:text-lime-400 text-xl absolute top-3 right-5"
+              className="self-end mb-6 text-muted hover:text-white text-xl absolute top-3 right-5"
             >
               ✕
             </button>
-          {/* Info Panel */}
-          <div className="w-full
-              md:w-2/5
-              p-6
-              overflow-y-auto
-              my-auto
-              relative">
-          
 
             <h2 className="text-3xl font-semibold mb-4">
               {project.title}

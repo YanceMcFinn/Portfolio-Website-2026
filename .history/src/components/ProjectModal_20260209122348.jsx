@@ -31,7 +31,7 @@ const next = () => {
         className="relative
           w-full
           max-w-6xl
-          md:h-full
+          max-h-[90vh]
           bg-black/70
           backdrop-blur-lg
           rounded-2xl
@@ -54,7 +54,7 @@ const next = () => {
               justify-center">
             {isMotionGraphics ? (
               <iframe
-                className="w-full h-full"
+                className="w-full h-[700px]"
                 src={`https://www.youtube.com/embed/${project.youtubeId}`}
                 title={project.title}
                 frameBorder="0"
@@ -65,7 +65,7 @@ const next = () => {
             (<img
               src={project.images[index]}
               alt={project.title}
-              className="w-full h-full object-contain"
+              className="w-full h-[700px] object-contain"
             />)}
 
             {!isMotionGraphics && hasImages && project.images.length > 1 && (
@@ -85,20 +85,15 @@ const next = () => {
               </>
             )}
           </div>
-<button
+
+          {/* Info Panel */}
+          <div className="p-8 flex flex-col justify-center relative">
+          <button
               onClick={onClose}
-              className="self-end mb-6 text-muted transition-all hover:text-lime-400 text-xl absolute top-3 right-5"
+              className="self-end mb-6 text-muted hover:text-white text-xl absolute top-3 right-5"
             >
               ✕
             </button>
-          {/* Info Panel */}
-          <div className="w-full
-              md:w-2/5
-              p-6
-              overflow-y-auto
-              my-auto
-              relative">
-          
 
             <h2 className="text-3xl font-semibold mb-4">
               {project.title}
