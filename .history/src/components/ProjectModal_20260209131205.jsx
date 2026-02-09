@@ -21,6 +21,7 @@ const next = () => {
   }
 
   return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
     // Overlay
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
@@ -111,6 +112,7 @@ const next = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
     
   )

@@ -21,9 +21,10 @@ const next = () => {
   }
 
   return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
     // Overlay
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
+      className="absolute inset-0 bg-black/60 backdrop-blur-md"
       onClick={onClose}
     >
       {/* Modal */}
@@ -32,7 +33,7 @@ const next = () => {
           w-full
           max-w-6xl
           md:h-full
-          bg-black/70
+          bg-black
           backdrop-blur-lg
           rounded-2xl
           overflow-hidden
@@ -111,6 +112,7 @@ const next = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
     
   )

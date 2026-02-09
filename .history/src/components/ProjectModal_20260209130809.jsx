@@ -32,7 +32,7 @@ const next = () => {
           w-full
           max-w-6xl
           md:h-full
-          bg-black/70
+          bg-black
           backdrop-blur-lg
           rounded-2xl
           overflow-hidden
