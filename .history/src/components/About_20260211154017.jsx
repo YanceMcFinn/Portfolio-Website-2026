@@ -6,7 +6,7 @@ export default function About() {
           h-auto
           w-3/4
           xl:h-[calc(100vh-64px)]
-          xl:w-auto"></img>
+          xl:w-1/2"></img>
             <div className = "my-auto mx-5 md:mx-20">
                 <h1 className="text-3xl md:text-4xl font-semibold mt-3 mb-6">ABOUT</h1>
                 <p className="max-w-2xl text-md">
